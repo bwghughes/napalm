@@ -43,7 +43,7 @@ fi
 
 log "Installing command-line tools"
 brew update
-brew install gh uv node go dockutil mole
+brew install git gh uv node go dockutil mole
 
 log "Installing applications"
 brew install --cask zed ghostty slack
@@ -105,4 +105,8 @@ printf '%s\n' \
   "  go version" \
   "  python3 --version" \
   "  rustc --version" \
-  "  napalm --dry-run"
+  "  napalm --dry-run" \
+  "" \
+  "Connect Git to GitHub:" \
+  "  gh auth login" \
+  "  gh auth setup-git"

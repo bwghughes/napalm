@@ -13,7 +13,7 @@ A fast, no-nonsense macOS command-line tool that quits all running GUI applicati
 
 ## Set up a new Mac
 
-The bootstrap installs Homebrew, GitHub CLI, uv, Node.js, Go, the latest
+The bootstrap installs Homebrew, Git, GitHub CLI, uv, Node.js, Go, the latest
 uv-managed Python, the stable Rust toolchain, Napalm, Zed, Ghostty, and Slack.
 It also applies the preferred Dock layout.
 
@@ -29,6 +29,14 @@ SKIP_DOCK=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/bwghugh
 
 The script is safe to run again: existing tools are left in place, Rust is
 updated, and the Napalm checkout is fast-forwarded rather than replaced.
+
+After setup, authenticate with GitHub and configure Git to use those
+credentials:
+
+```bash
+gh auth login
+gh auth setup-git
+```
 
 ## Install
 
