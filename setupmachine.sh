@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Bootstrap a new Mac:
-#   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/bwghughes/napalm/main/setupmachine.sh)"
+#   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/bwghughes/napalm/master/setupmachine.sh)"
 #
 # Optional overrides:
 #   NAPALM_DIR="$HOME/code/napalm" SKIP_DOCK=1 /bin/bash setupmachine.sh
@@ -44,6 +44,9 @@ fi
 log "Installing command-line tools"
 brew update
 brew install gh uv node go dockutil mole
+
+log "Installing applications"
+brew install --cask zed ghostty slack
 
 log "Installing the latest Python managed by uv"
 (cd / && uv python install --default)
