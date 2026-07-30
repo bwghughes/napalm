@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if ! command -v mole >/dev/null 2>&1; then
+  echo "Installing mole…"
+  brew install mole
+fi
+
+
 # Chekc for dockutil, installl of not there.
 if ! command -v dockutil >/dev/null 2>&1; then
   echo "Installing dockutil…"
