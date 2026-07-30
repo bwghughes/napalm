@@ -11,6 +11,25 @@ A fast, no-nonsense macOS command-line tool that quits all running GUI applicati
 
 > **macOS only** — uses native AppKit/NSWorkspace APIs via Objective-C bindings. Will not compile on Linux or Windows.
 
+## Set up a new Mac
+
+The bootstrap installs Homebrew, GitHub CLI, uv, Node.js, Go, the latest
+uv-managed Python, the stable Rust toolchain, and Napalm. It also applies the
+preferred Dock layout.
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/bwghughes/napalm/main/setupmachine.sh)"
+```
+
+To keep the current Dock layout:
+
+```bash
+SKIP_DOCK=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/bwghughes/napalm/main/setupmachine.sh)"
+```
+
+The script is safe to run again: existing tools are left in place, Rust is
+updated, and the Napalm checkout is fast-forwarded rather than replaced.
+
 ## Install
 
 ```bash
